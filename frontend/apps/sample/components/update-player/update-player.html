@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #create-form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10rem;
+        background-image: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.5),
+          rgba(150, 150, 150, 0.5)
+        );
+      }
+
+      .form-group {
+        display: flex;
+        flex: 0 0 auto;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0;
+      }
+      .form-control {
+        margin: 0.5rem;
+        border-radius: 10px;
+        font-size: 18px;
+      }
+      #create-players {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .create-input {
+        display: block;
+        width: 200px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 18px;
+        font-family: sans-serif;
+        text-decoration: none;
+        color: #333;
+        border: 2px solid #333;
+        letter-spacing: 2px;
+        text-align: center;
+        position: relative;
+        transition: all 0.35s;
+        margin: 1rem;
+        border-radius: 30px;
+      }
+      .create-input:hover {
+        background: #000;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="create-form">
+      <form>
+        <div class="form-group">
+          <label for="playerTitle">Player ID</label>
+          <input
+            type="text"
+            class="form-control"
+            id="id"
+            placeholder="playerID"
+          />
+        </div>
+        <div class="form-group">
+          <label for="player">Player Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            placeholder="Name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="nation">player Nation</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nation"
+            placeholder="Nation"
+          />
+        </div>
+        <div class="form-group">
+          <label for="age">player Age</label>
+          <input type="text" class="form-control" id="age" placeholder="Age" />
+        </div>
+        <div calss="create-players">
+          <button
+            type="button"
+            class="create-input"
+            onclick='monkshu_env.components["update-player"].updatePlayer(`{{id}}`)'
+          >
+            update player
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

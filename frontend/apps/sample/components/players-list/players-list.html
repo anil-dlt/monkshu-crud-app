@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<style>
+  body{
+    margin-top:8rem;
+  }
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    align-items: center;
+    width: 60%;
+  }
+
+  td,
+  th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  .player-table{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+  #create-players{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+
+.create-input{
+  display: block;
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #333;
+  border: 2px solid #333;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all .35s;
+  margin:1rem;
+  border-radius:30px;
+}
+.create-input:hover{
+ background:#000;
+ color:#fff;
+}
+.action-buttons{
+  margin-left:1rem;
+  border-radius:20px;
+  padding-left:0.7rem;
+  padding-right:0.7rem;
+}
+.action-buttons:hover{
+  background:rgba(0,0,0,0.8);
+  color:#fff;
+}
+
+</style>
+  </head>
+  <body>
+    <h2 class="player-table">MONKSHU SAMPLE CRUD_APP</h2>
+    <h2 class="player-table">List Of Cricket Players & Bio</h2>
+    <div class="player-table">
+    <table>
+      <tr>
+        <th>id</th>
+        <th>Player Name</th>
+        <th>Country</th>
+        <th>Age</th>
+        <th></th>
+      </tr>
+      {{#players_list}}
+      <tr>
+        <td>{{id}}</td>
+        <td>{{player}}</td>
+        <td>{{nation}}</td>
+        <td>{{age}}</td>
+        <td>
+          <input
+          class="action-buttons"
+  type="button"
+  value="! Edit"
+  id="update-message"
+  onclick='monkshu_env.components["players-list"].uploadCreatePlayerPage()'  
+/>         </button>
+          <button  class="action-buttons"
+            onclick='monkshu_env.components["players-list"].deletePlayer(`{{id}}`)'
+          >
+            X DELETE
+          </button>
+        </td>
+      </tr>
+      {{/players_list}}
+    </table>
+  </div>
+  </body>
+</html>
+
+<div id="create-players">
+  <input
+  class="create-input"
+  type="button"
+  value="create Players!"
+  onclick='monkshu_env.components["players-list"].loadCreatePlayerPage()'  
+/>
+</div>

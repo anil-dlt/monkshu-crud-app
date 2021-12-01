@@ -1,0 +1,10 @@
+  
+
+{
+  
+    "/apis/create-player": "/apis/createPlayer.js?needsToken=false&addsToken=sub:access",
+    "/apis/players": "/apis/displayPlayers.js?needsToken=false&addsToken=sub:access",
+    "/apis/update-player": "/apis/updatePlayer.js?needsToken=false&addsToken=sub:access",
+    "/apis/delete-player": "/apis/deletePlayer.js?needsToken=false&addsToken=sub:access"
+
+}
